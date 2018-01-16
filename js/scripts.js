@@ -19,7 +19,7 @@ $(function() {
             //CREATING COMPONENTS OF COLUMNS
             var $column = $("<div>").addClass("column");
             var $columnTitle = $("<h2>").addClass("column-title").text(self.name);
-            var columnCardList = $("<ul>").addClass("column-card-list");
+            var $columnCardList = $("<ul>").addClass("column-card-list");
             var $columnDelete = $("<button>").addClass("btn-delete").text("x");
             var $columnAddCard = $("<button>").addClass("add-card").text("Add a Card");
     
@@ -28,8 +28,8 @@ $(function() {
                 self.removeColumn();
             });
     
-            $columnAddCard.click(function(){
-                self.addCard(new $columnAddCard(prompt("Enter the name of the card")));
+            $columnAddCard.click(function(event){
+                self.addCard(new Card(prompt("Enter the name of the card")));
             });
     
             //CONSTRUCTION COLUMN ELEMENT
@@ -124,4 +124,5 @@ $(function() {
         //ADDING CARDS TO COLUMNS 
         todoColumn.addCard(card1);
         doingColumn.addCard(card2);
-})
+        
+});
